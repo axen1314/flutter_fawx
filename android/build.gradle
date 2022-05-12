@@ -48,5 +48,5 @@ android {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation "com.github.axen1314:fawx:1.0.0-alpha2"
+    implementation "com.github.axen1314:fawx:1.0.0"
 }

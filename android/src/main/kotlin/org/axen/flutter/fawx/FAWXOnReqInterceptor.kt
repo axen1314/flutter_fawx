@@ -10,7 +10,7 @@ import io.flutter.plugin.common.MethodChannel
 import org.axen.fawx.FAWXOnReqInterceptorProcessor
 import org.axen.fawx.IFAWXOnReqInterceptor
 
-class FlutterFAWXAPIInterceptor(private val channel: MethodChannel): IFAWXOnReqInterceptor {
+class FAWXOnReqInterceptor(private val channel: MethodChannel): IFAWXOnReqInterceptor {
 
     override fun intercept(
         context: Context,
