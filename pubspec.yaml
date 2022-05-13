@@ -29,7 +29,7 @@ flutter:
     platforms:
       android:
         package: org.axen.flutter.fawx
-        pluginClass: FawxPlugin
+        pluginClass: FAWXPlugin
       ios:
         pluginClass: FawxPlugin
 
