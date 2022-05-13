@@ -19,8 +19,8 @@ class _FAWXAPI {
     return success??false;
   }
 
-  Future<bool> get isWechatAppInstalled async {
-    bool? isWechatAppInstalled = await _channel.invokeMethod("isWechatAppInstalled");
+  Future<bool> get isWechatInstalled async {
+    bool? isWechatAppInstalled = await _channel.invokeMethod("isWechatInstalled");
     return isWechatAppInstalled??false;
   }
 

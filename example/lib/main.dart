@@ -25,7 +25,7 @@ class _MyAppState extends State<MyApp> {
   }
 
   Future<void> initPlatformState() async {
-    bool isWechatAppInstalled = await fawx.isWechatAppInstalled;
+    bool isWechatAppInstalled = await fawx.isWechatInstalled;
     if (!mounted) return;
 
     setState(() {
