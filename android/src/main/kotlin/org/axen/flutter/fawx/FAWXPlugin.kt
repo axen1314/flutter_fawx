@@ -67,7 +67,10 @@ class FAWXPlugin: FlutterPlugin, MethodCallHandler {
     val req = SendAuth.Req().apply {
       FAWXUtils.authReqFromMap(this, call.arguments as Map<String, Any?>)
     }
-    FAWXAPI.sendReq(req) { result.success(it.toMap()) }
+    FAWXAPI.sendReq(req) {
+      val resp = it as SendAuth.Resp
+      result.success(resp.toMap())
+    }
   }
 
   /**

@@ -7,22 +7,22 @@ import com.tencent.mm.opensdk.modelmsg.SendAuth
 object FAWXUtils {
     fun baseRespToMap(resp: BaseResp, map: MutableMap<String, Any?>) {
         map.apply {
-            "errCode" to resp.errCode
-            "errStr" to resp.errStr
-            "openId" to resp.openId
-            "transaction" to resp.transaction
+            this["errCode"] = resp.errCode
+            this["errStr"] =  resp.errStr
+            this["openId"] = resp.openId
+            this["transaction"] = resp.transaction
         }
     }
 
     fun authRespToMap(resp: SendAuth.Resp, map: MutableMap<String, Any?>){
         baseRespToMap(resp, map)
         map.apply {
-            "code" to resp.code
-            "state" to resp.state
-            "country" to resp.country
-            "lang" to resp.lang
-            "url" to resp.url
-            "authResult" to resp.authResult
+            this["code"] = resp.code
+            this["state"] = resp.state
+            this["country"] = resp.country
+            this["lang"] = resp.lang
+            this["url"] = resp.url
+            this["authResult"] = resp.authResult
         }
     }
 
