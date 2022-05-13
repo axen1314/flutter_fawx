@@ -1,8 +1,10 @@
 abstract class BaseResp {
-  String? errCode;
+  int? errCode;
   String? errString;
   String? transaction;
   String? openId;
+
+  BaseResp();
 
   BaseResp.fromMap(Map<String, dynamic> map) {
     errCode = map["errCode"];
@@ -18,6 +20,8 @@ abstract class BaseResp {
     "openId": openId,
   };
 
+  bool get isSuccessful => errCode == 0;
+
   int get type;
 
 }
@@ -26,6 +30,8 @@ class AuthReq extends BaseResp {
   String? scope;
   String? state;
   String? extData;
+
+  AuthReq();
 
   AuthReq.fromMap(Map<String, dynamic> map) : super.fromMap(map) {
     scope = map["scope"];
@@ -44,7 +50,7 @@ class AuthReq extends BaseResp {
 
 }
 
-class AuthResponse extends BaseResp {
+class AuthResp extends BaseResp {
   String? code;
   String? state;
   bool authResult = false;
@@ -52,7 +58,9 @@ class AuthResponse extends BaseResp {
   String? lang;
   String? country;
 
-  AuthResponse.fromMap(Map<String, dynamic> map) : super.fromMap(map) {
+  AuthResp();
+
+  AuthResp.fromMap(Map<String, dynamic> map) : super.fromMap(map) {
     code = map["code"];
     state = map["state"];
     authResult = map["authResult"];

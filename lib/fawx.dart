@@ -24,10 +24,10 @@ class _FAWXAPI {
     return isWechatAppInstalled??false;
   }
 
-  Future<AuthResponse> sendAuthReq(AuthReq req) async {
+  Future<AuthResp> sendAuthReq(AuthReq req) async {
     Map<String, dynamic>? response = await _channel.invokeMapMethod("sendAuthReq", req.toMap());
     if (response != null) {
-      return AuthResponse.fromMap(response);
+      return AuthResp.fromMap(response);
     }
     throw FAWXNullPointerException("sendAuthReq: response == null");
   }
